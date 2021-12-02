@@ -8,10 +8,11 @@ public class ToDo {
 
     @Id
     @GeneratedValue
-    private long id;
+    private long todo_id;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    private User user;
+    @JoinColumn(name = "person_id", nullable = false)
+    private Person person;
     private String description;
     private Integer week;
 
@@ -24,11 +25,11 @@ public class ToDo {
     }
 
     public long getId() {
-        return id;
+        return todo_id;
     }
 
     public void setId(long id) {
-        this.id = id;
+        this.todo_id = id;
     }
 
     public String getDescription() {

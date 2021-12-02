@@ -13,16 +13,16 @@ public interface ToDoApi {
     @GetMapping("/todos")
     public List<ToDo> getToDos();
 
-    @GetMapping("/todos/{id}")
+    @GetMapping("/todo/{id}")
     public ToDo getToDo(@PathVariable("id") long id);
 
-    @PostMapping("/todos")
+    @PostMapping("/todo")
     public void postToDo(ToDo todo);
 
-    @PutMapping("/todos/{id}")
+    @PutMapping("/todo/{id}")
     public void putToDo(@PathVariable("id") long id, ToDo todo);
 
-    @DeleteMapping("todos/{id}")
-    public void deleteToDo(@PathVariable("id") long id);
+    @DeleteMapping("todo/{id}")
+    public void  deleteToDo(@PathVariable("id") long id);
 
 }

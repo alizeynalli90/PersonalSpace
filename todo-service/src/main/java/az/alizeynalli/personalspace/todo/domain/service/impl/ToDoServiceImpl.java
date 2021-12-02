@@ -4,7 +4,6 @@ import az.alizeynalli.personalspace.todo.domain.service.ToDoService;
 import az.alizeynalli.personalspace.todo.entity.ToDo;
 import az.alizeynalli.personalspace.todo.repository.ToDoRepository;
 import az.alizeynalli.personalspace.todo.shared.exception.NotFoundException;
-import lombok.extern.apachecommons.CommonsLog;
 import org.springframework.stereotype.Component;
 
 import java.util.List;

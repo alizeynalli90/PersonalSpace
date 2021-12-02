@@ -1,27 +1,23 @@
 package az.alizeynalli.personalspace.todo.entity;
 
-import org.apache.catalina.LifecycleState;
-
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "user")
-public class User {
+@Table(name = "person")
+public class Person {
     @Id
     @GeneratedValue
-    private Long id;
+    private Long person_id;
     private String name;
 
     @OneToMany(
-            mappedBy = "user",
-            cascade = CascadeType.ALL,
-            orphanRemoval = true
+            mappedBy = "person"
     )
     private List<ToDo> todos = new ArrayList<>();
 
-    public User() {
+    public Person() {
     }
 
     public void addToDo(ToDo todo){
@@ -32,16 +28,16 @@ public class User {
         todos.remove(todo);
     }
 
-    public User(String name) {
+    public Person(String name) {
         this.name = name;
     }
 
     public Long getId() {
-        return id;
+        return person_id;
     }
 
     public void setId(Long id) {
-        this.id = id;
+        this.person_id = id;
     }
 
     public String getName() {

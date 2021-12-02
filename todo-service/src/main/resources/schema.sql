@@ -1,18 +1,15 @@
-CREATE TABLE user (
-    id BIGINT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(255) DEFAULT NULL
+CREATE TABLE person (
+    person_id BIGINT AUTO_INCREMENT,
+    name VARCHAR(255) DEFAULT NULL,
+    PRIMARY KEY (person_id)
 );
 
 
 CREATE TABLE todo (
-    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    todo_id BIGINT AUTO_INCREMENT,
+    person_id BIGINT NOT NULL,
     description VARCHAR(255) DEFAULT NULL,
-    week BIGINT DEFAULT NULL
-);
-
-CREATE TABLE user_todo (
-    user_id BIGINT NOT NULL,
-    todo_id BIGINT NOT NULL,
-    CONSTRAINT FK_USER_ID FOREIGN KEY (user_id) REFERENCES user (id),
-    CONSTRAINT FK_TODO_ID FOREIGN KEY (todo_id) REFERENCES todo (id)
+    week BIGINT DEFAULT NULL,
+    PRIMARY KEY (todo_id),
+    FOREIGN KEY (person_id) REFERENCES person(person_id)
 );

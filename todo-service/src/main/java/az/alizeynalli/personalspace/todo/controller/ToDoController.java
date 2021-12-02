@@ -29,25 +29,25 @@ public class ToDoController implements ToDoApi {
 
     @Override
     public ToDo getToDo(long id) {
-        logger.info("Get /todos/{}", id);
+        logger.info("Get /todo/{}", id);
         return toDoService.get(id);
     }
 
     @Override
     public void postToDo(ToDo todo) {
-        logger.info("Post /todos");
+        logger.info("Post /todo");
         toDoService.post(todo);
     }
 
     @Override
     public void putToDo(long id, ToDo todo) {
-        logger.info("Put /todos/{}", id);
+        logger.info("Put /todo/{}", id);
         toDoService.put(id, todo);
     }
 
     @Override
     public void deleteToDo(long id) {
-        logger.info("Delete /todos/{}", id);
+        logger.info("Delete /todo/{}", id);
         toDoService.delete(id);
     }
 }
